@@ -5,9 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
-        run: echo "Event data: ${{ github.event }}"
+        run: |
+          echo "Event data: ${{ github.event }}"
       - name: Get code
-        run: actions/checkout@3
+        uses: actions/checkout@v3
       - name: Install dependencies
         run: npm install
       - name: Test code
